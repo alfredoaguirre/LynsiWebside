@@ -1,0 +1,65 @@
+// This directive installs packages from NuGet and is what you would normally use
+// NOTE: If running the example against a downloaded version of Wyam, uncomment this block and comment the next block
+#n Wyam.Yaml
+#n Wyam.Razor
+#n Wyam.Sass
+#n Wyam.Markdown
+#n Wyam.cs
+
+
+#n System.Text
+
+
+using YamlDotNet.RepresentationModel;
+using YamlDotNet.Serialization;
+
+public static class Helpers
+{
+    public static string get(this YamlDocument doc, String Key)
+    {
+        var doc2 = (YamlMappingNode)doc.RootNode;
+        return ((YamlScalarNode)doc2.Children[new YamlScalarNode(Key)]).Value;
+    }
+}
+
+// This directive loads modules directly from the local build and is used for testing
+// NOTE: If running the example against modules built from source, call wyam.exe from the Wyam.Examples.Tests/bin/Debug folder 
+// #a **/*
+
+// Normalize the culture for the examples so they produce the same output regardless of system culture
+System.Globalization.CultureInfo.DefaultThreadCurrentCulture
+    = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+
+Pipelines.Add("Home",
+	ReadFiles("index.cshtml"),
+	Razor(),
+	WriteFiles(".html")
+);
+
+Pipelines.Add("Sass",
+    ReadFiles("scss/style.scss"),
+    Sass().WithCompactOutputStyle(),
+    WriteFiles((doc, ctx) => $"css/style.scss").UseWriteMetadata(false)
+);
+
+
+Pipelines.Add("js",
+    ReadFiles("js/*"),
+    WriteFiles()
+);
+
+Pipelines.Add("images",
+    ReadFiles("images/*"),
+    WriteFiles()
+);
+
+
+Pipelines.Add("css",
+    ReadFiles("css/*"),
+    WriteFiles()
+);
+
+Pipelines.Add("fonts",
+    ReadFiles("fonts/**"),
+    WriteFiles()
+);

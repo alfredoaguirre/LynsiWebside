@@ -1,0 +1,20 @@
+Divider: Strength
+Subheading: Welcome to the Clu 
+Heading: hola
+Paragraph: A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.
+LinkText: Join with us
+background: bg_1.jpg
+--- 
+Divider: Workout
+Subheading: Welcome to Club
+Heading: Pain is <span>Temporary</span> But Glory is <span>Forever</span>
+Paragraph:  A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.
+LinkText: Join with us now
+background: bg_2.jpg
+--- 
+Divider: Workout
+Subheading: Welcome to Club
+Heading: Pain is <span>Temporary</span> But Glory is <span>Forever</span>
+Paragraph:  A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.
+LinkText: Join with us now
+background: bg_3.jpg
