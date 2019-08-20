@@ -1,14 +1,14 @@
 
 
-### how to install wyam 
+### How to install wyam 
 dotnet tool install -g Wyam.Tool
 
-### hwo to run 
+### How to run 
 wyam.exe  --watch  --preview
 
-### default host 
+### Default host 
 http://localhost:5080
 
 
-#### help webside from Wyam
+#### Help webside from Wyam
 [https://wyam.io/docs/usage/obtaining](https://wyam.io/docs/usage/obtaining).
