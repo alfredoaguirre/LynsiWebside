@@ -14,8 +14,8 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: Build with dotnet
-      run: 
-       | dotnet tool install -g Wyam.Tool
-       | ~/.dotnet/tools/wyam
+      run: |
+        dotnet tool install -g Wyam.Tool
+        ~/.dotnet/tools/wyam
       
 
