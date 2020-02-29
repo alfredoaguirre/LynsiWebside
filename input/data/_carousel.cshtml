@@ -2,11 +2,12 @@
 @using System.IO;
 @using YamlDotNet.RepresentationModel;
 @using YamlDotNet.Serialization;
-
+@using System;
 
 @{
 
- using (var reader = new StreamReader(@"input\data\carousel.yaml")) {
+ Char  S = System.IO.Path.DirectorySeparatorChar;
+ using (var reader = new StreamReader(String.Format(@"input{0}data{0}carousel.yaml", S))) {
   var yaml = new YamlStream();
   yaml.Load(reader);
 
