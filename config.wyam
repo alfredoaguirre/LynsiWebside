@@ -15,7 +15,7 @@ using YamlDotNet.Serialization;
 
 public static class Helpers
 {
-    public static string get(this YamlDocument doc, String Key)
+    public static string Get(this YamlDocument doc, String Key)
     {
         var doc2 = (YamlMappingNode)doc.RootNode;
         return ((YamlScalarNode)doc2.Children[new YamlScalarNode(Key)]).Value;

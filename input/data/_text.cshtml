@@ -5,22 +5,23 @@
 
 
 @{
- Char S = System.IO.Path.DirectorySeparatorChar;
- using (var reader = new StreamReader(String.Format(@"input{0}data{0}text.yaml", S))) {
-    var yaml = new YamlStream();
-    yaml.Load(reader);
-      int i = 0;
-foreach(var doc in yaml.Documents)
-{
-    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-        <div class="media block-6 services @(i++%2 == 0? "services" : "services-2") text-center d-block">
-            <div class="icon"><span class="flaticon-body"></span></div>
-            <div class="media-body">
-                <h3 class="heading mb-3">@doc.get("title")</h3>
-                <p>@doc.get("Paragraph") </p>
-                <!-- <p><a href="#" class="btn btn-primary">Read more</a></p> -->
+    Char S = System.IO.Path.DirectorySeparatorChar;
+    using (var reader = new StreamReader(String.Format(@"input{0}data{0}text.yaml", S)))
+    {
+        var yaml = new YamlStream();
+        yaml.Load(reader);
+        int i = 0;
+        foreach (var doc in yaml.Documents)
+        {
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services @(i++%2 == 0? "services" : "services-2") text-center d-block">
+                    <div class="icon"><span class="flaticon-body"></span></div>
+                    <div class="media-body">
+                        <h3 class="heading mb-3">@doc.Get("title")</h3>
+                        <p>@doc.Get("Paragraph") </p>
+                        <!-- <p><a href="#" class="btn btn-primary">Read more</a></p> -->
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-}
-}}
+        }
+    }}

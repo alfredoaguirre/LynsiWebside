@@ -2,14 +2,16 @@ using System.Text;
 using System.IO;
 using YamlDotNet.RepresentationModel;
 using YamlDotNet.Serialization;
+using System;
+
 namespace Alfredo
 {
 
-    public class extensionMethod
+    public static class YamlQuery
     {
-        public static string get(this YamlDocument doc, String Key)
+        public static string Get(this YamlDocument doc, String Key)
         {
-            return ((YamlScalarNode)doc.Children[new YamlScalarNode("Divider")]).Value;
+            return ""; //((YamlScalarNode)doc.Children[new YamlScalarNode("Divider")]).Value;
         }
     }
 

@@ -22,14 +22,14 @@ jobs:
     - name: Build with dotnet
       run: |
         dotnet tool install -g Wyam.Tool
-        ~/.dotnet/tools/wyam
+        ~/.dotnet/tools/wyam -o wwwroot
     - name: Upload static webside
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
         name: static webside
         # Directory containing files to upload
-        path: ./output
+        path: /
 
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
