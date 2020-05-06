@@ -25,7 +25,7 @@ jobs:
         ~/.dotnet/tools/wyam -o wwwroot
     - name: copy static web.config 
         run: |
-         cp web.config.static wwwroot/web.config
+        cp web.config.static wwwroot/web.config
     - name: Upload static website
       uses: actions/upload-artifact@v1.0.0
       with:
