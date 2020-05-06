@@ -2,12 +2,6 @@ name: .NET Core
 
 on: [push]
 
-
-env:
-  AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '2.2.402'      
-
 jobs:
   build:
 
@@ -25,10 +19,13 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Build with dotnet
+    - name: Build static wyam website
       run: |
         dotnet tool install -g Wyam.Tool
         ~/.dotnet/tools/wyam -o wwwroot
+    - name: Build dot website
+        run: |
+          dotnet build
     - name: Upload static website
       uses: actions/upload-artifact@v1.0.0
       with:
