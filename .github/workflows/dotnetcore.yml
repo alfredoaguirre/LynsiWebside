@@ -24,7 +24,7 @@ jobs:
         dotnet tool install -g Wyam.Tool
         ~/.dotnet/tools/wyam -o wwwroot
     - name: Build dot website
-        run: |
+      run: |
           dotnet build
     - name: Upload static website
       uses: actions/upload-artifact@v1.0.0
